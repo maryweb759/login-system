@@ -1,0 +1,20 @@
+<form action="" [formGroup]="myForm"> 
+    <div> 
+        <input type="text"  placeholder="email" formControlName="email"> 
+        <span *ngIf="isValid('email')"> enterd email is invalid</span>
+    </div>
+    <div> 
+        <input type="password" placeholder="password" formControlName="password"> 
+        <span *ngIf="isValid('password')"> password is required </span>
+    </div>
+    
+    <button (click)="login()" > login </button> 
+    <div> 
+        {{ successMessage }}
+    </div>
+</form> 
+
+<div> 
+    <button (click)="movetoLogin()"> move to register form</button>
+</div>
+

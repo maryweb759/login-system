@@ -1,0 +1,26 @@
+<form action="" [formGroup]="myForm"> 
+    <div> 
+        <input type="text" placeholder="username" formControlName="username"> 
+        <span *ngIf="isValid('username')"> enterd username is invalid</span>
+    </div>
+    <div> 
+        <input type="text"  placeholder="email" formControlName="email"> 
+        <span *ngIf="isValid('email')"> enterd email is invalid</span>
+    </div>
+    <div> 
+        <input type="password" placeholder="password" formControlName="password"> 
+        <span *ngIf="isValid('password')"> password is required </span>
+    </div>
+    <div> 
+        <input type="password" placeholder="repeat password " formControlName="cnfpass" id="cnfpass"> 
+        <span *ngIf="isValid('cnfpass')"> password dosn't match </span>
+    </div> 
+    <button (click)="register()" > register </button> 
+    <div> 
+        {{ successMessage }}
+    </div>
+</form> 
+
+<div> 
+    <button (click)="movetoRegister()"> move to login form</button>
+</div>
